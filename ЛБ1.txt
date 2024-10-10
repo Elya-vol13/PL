@@ -235,6 +235,7 @@ internal class Program
             t += "*";   
             Console.WriteLine(t);
         }
+        Console.WriteLine('\n');
     }
 
     //3.10
@@ -269,7 +270,7 @@ internal class Program
             if (a == t)
             {
                 Console.WriteLine("Вы угадали!");
-                Console.WriteLine(String.Format("Вы угадали за {0} попытки!", k));
+                Console.WriteLine(String.Format("Вы угадали за {0} попытки!\n", k));
                 break;
             }
             else
@@ -433,7 +434,7 @@ internal class Program
 
                 case 2:
                     //1.4
-                    Console.WriteLine("\n\nЗадание 1.4: ");
+                    Console.WriteLine("\nЗадание 1.4: ");
                     Console.Write("Введите число: ");
                     while (true)
                     {
@@ -451,7 +452,7 @@ internal class Program
 
                 case 3:
                     //1.6
-                    Console.WriteLine("\n\nЗадание 1.6: ");
+                    Console.WriteLine("\nЗадание 1.6: ");
                     Console.Write("Введите символ: ");
                     while (true)
                     {
@@ -469,7 +470,7 @@ internal class Program
 
                 case 4:
                     //1.8
-                    Console.WriteLine("\n\nЗадание 1.8: ");
+                    Console.WriteLine("\nЗадание 1.8: ");
                     Console.Write("Введите число a: ");
                     while (true)
                     {
@@ -664,7 +665,7 @@ internal class Program
                     Console.WriteLine("\nЗадание 2.10: ");
                     Console.WriteLine("Введите день недели: ");
                     y = Console.ReadLine();
-                    Console.WriteLine("Результат: ");
+                    Console.WriteLine("\nРезультат: ");
                     p.printDays(y);
                     break;
 
@@ -905,7 +906,7 @@ internal class Program
 
                 case 20:
                     //4.10
-                    Console.WriteLine("\nЗадание 4.8: ");
+                    Console.WriteLine("\nЗадание 4.10: ");
                     Console.WriteLine("Введите числа массива через пробел:");
                     while (true)
                     {
