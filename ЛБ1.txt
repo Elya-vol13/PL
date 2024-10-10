@@ -132,7 +132,7 @@ internal class Program
                 Console.WriteLine("Четверг");
                 Console.WriteLine("Пятница");
                 Console.WriteLine("Суббота");
-                Console.WriteLine("Воскресенье");
+                Console.WriteLine("Воскресенье\n");
                 break;
             case "вторник":
                 Console.WriteLine("Вторник");
@@ -140,35 +140,35 @@ internal class Program
                 Console.WriteLine("Четверг");
                 Console.WriteLine("Пятница");
                 Console.WriteLine("Суббота");
-                Console.WriteLine("Воскресенье");
+                Console.WriteLine("Воскресенье\n");
                 break;
             case "среда":
                 Console.WriteLine("Среда");
                 Console.WriteLine("Четверг");
                 Console.WriteLine("Пятница");
                 Console.WriteLine("Суббота");
-                Console.WriteLine("Воскресенье");
+                Console.WriteLine("Воскресенье\n");
                 break;
             case "четверг":
                 Console.WriteLine("Четверг");
                 Console.WriteLine("Пятница");
                 Console.WriteLine("Суббота");
-                Console.WriteLine("Воскресенье");
+                Console.WriteLine("Воскресенье\n");
                 break;
             case "пятница":
                 Console.WriteLine("Пятница");
                 Console.WriteLine("Суббота");
-                Console.WriteLine("Воскресенье");
+                Console.WriteLine("Воскресенье\n");
                 break;
             case "суббота":
                 Console.WriteLine("Суббота");
-                Console.WriteLine("Воскресенье");
+                Console.WriteLine("Воскресенье\n");
                 break;
             case "воскресенье":
-                Console.WriteLine("Воскресенье");
+                Console.WriteLine("Воскресенье\n");
                 break;
             default:
-                Console.WriteLine("Это не день недели");
+                Console.WriteLine("Это не день недели\n");
                 break;
         }
     }
