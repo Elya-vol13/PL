@@ -16,7 +16,7 @@ internal class Program
     //1.4
     public bool isPositive(int x)
     {
-        if (x > 0)
+        if (x >= 0)
         {
             return true;
         }
