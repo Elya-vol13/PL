@@ -177,9 +177,19 @@ internal class Program
     public String reverseListNums(int x)
     {
         string s = "";
-        while (x >= 0)
+        if (x > 0)
         {
-            s = s + x--.ToString() + " ";
+            while (x >= 0)
+            {
+                s = s + x--.ToString() + " ";
+            }
+        }
+        else
+        {
+            while (x <= 0)
+            {
+                s = s + x++.ToString() + " ";
+            }
         }
         return s;
     }
