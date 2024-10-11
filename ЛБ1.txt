@@ -1,521 +1,492 @@
 using System;
+using System.Linq;
 
-internal class Program
+namespace ConsoleApp3c_
 {
+    internal class Program
+    {
 
-    //1.2
-    public int sumLastNums(int x)
-    {
-        int sum = 0;
-        sum += x % 10;
-        x /= 10;
-        sum += x % 10;
-        return sum;
-    }
+        //1.2
+        public int sumLastNums(int x)
+        {
+            int sum = 0;
+            sum += x % 10;
+            x /= 10;
+            sum += x % 10;
+            return sum;
+        }
 
-    //1.4
-    public bool isPositive(int x)
-    {
-        if (x >= 0)
+        //1.4
+        public bool isPositive(int x)
         {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
-
-    //1.6
-    public bool isUpperCase(char x)
-    {
-        //проверяем чтобы ASCII код символа был в диапазоне латинских букв верхнего регистра
-        if (64 < (int)x && (int)x < 91)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
-
-    //1.8
-    public bool isDivisor(int a, int b)
-    {
-        if (a % b == 0 || b % a == 0)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
-    
-    //1.10
-    public int lastNumSum(int a, int b)
-    {
-        return a % 10 + b % 10;
-    }
-
-    //2.2
-    public double safeDiv(int x, int y)
-    {
-        if (y != 0)
-        {
-            return (double)x / y;
-        }
-        else
-        {
-            return 0;
-        }
-    }
-
-    //2.4
-    public String makeDecision(int x, int y)
-    {
-        if (x > y)
-        {
-            return x.ToString() + " > " + y.ToString();
-        }
-        else if (x < y)
-        {
-            return x.ToString() + " < " + y.ToString();
-        }
-        else
-        {
-            return x.ToString() + " == " + y.ToString();
-        }
-    }
-
-    //2.6
-    public bool sum3(int x, int y, int z)
-    {
-        if (x + y == z || x + z == y || y + z == x)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
-
-    //2.8
-    public String age(int x)
-    {
-        if (x % 10 == 1 && x != 11)
-        {
-            return x.ToString() + " год";
-        }
-        else if ((x % 10 == 2 || x % 10 == 3 || x % 10 == 4) && x != 12 && x != 13 && x != 14)
-        {
-            return x.ToString() + " года";
-        }
-        else
-        {
-            return x.ToString() + " лет";
-        }
-    }
-
-    //2.10
-    public void printDays(String x)
-    {
-        x = x.ToLower();
-        switch (x)
-        {
-            case "понедельник":
-                Console.WriteLine("Понедельник");
-                Console.WriteLine("Вторник");
-                Console.WriteLine("Среда");
-                Console.WriteLine("Четверг");
-                Console.WriteLine("Пятница");
-                Console.WriteLine("Суббота");
-                Console.WriteLine("Воскресенье\n");
-                break;
-            case "вторник":
-                Console.WriteLine("Вторник");
-                Console.WriteLine("Среда");
-                Console.WriteLine("Четверг");
-                Console.WriteLine("Пятница");
-                Console.WriteLine("Суббота");
-                Console.WriteLine("Воскресенье\n");
-                break;
-            case "среда":
-                Console.WriteLine("Среда");
-                Console.WriteLine("Четверг");
-                Console.WriteLine("Пятница");
-                Console.WriteLine("Суббота");
-                Console.WriteLine("Воскресенье\n");
-                break;
-            case "четверг":
-                Console.WriteLine("Четверг");
-                Console.WriteLine("Пятница");
-                Console.WriteLine("Суббота");
-                Console.WriteLine("Воскресенье\n");
-                break;
-            case "пятница":
-                Console.WriteLine("Пятница");
-                Console.WriteLine("Суббота");
-                Console.WriteLine("Воскресенье\n");
-                break;
-            case "суббота":
-                Console.WriteLine("Суббота");
-                Console.WriteLine("Воскресенье\n");
-                break;
-            case "воскресенье":
-                Console.WriteLine("Воскресенье\n");
-                break;
-            default:
-                Console.WriteLine("Это не день недели\n");
-                break;
-        }
-    }
-
-    //3.2
-    public String reverseListNums(int x)
-    {
-        string s = "";
-        if (x > 0)
-        {
-            while (x >= 0)
+            if (x >= 0)
             {
-                s = s + x--.ToString() + " ";
-            }
-        }
-        else
-        {
-            while (x <= 0)
-            {
-                s = s + x++.ToString() + " ";
-            }
-        }
-        return s;
-    }
-
-    //3.4
-    public int pow(int x, int y)
-    {
-        int t = x;
-        for (int i = 0; i < y - 1; i++)
-        {
-            t *= x;
-        }
-        return t;
-    }
-
-    //3.6
-    public bool equalNum(int x)
-    {
-        int t = x % 10;
-        x /= 10;
-        //сравниваем цифры числа по очереди, если хоть один раз цифры разные, то false
-        while (x > 0)
-        {
-            if (t == x % 10)
-            {
-                t = x % 10;
-                x /= 10;
+                return true;
             }
             else
             {
                 return false;
             }
         }
-        return true;
-    }
 
-    //3.8
-    public void leftTriangle(int x)
-    {
-        string t = "";
-        for (int i = 0; i < x; i++)
+        //1.6
+        public bool isUpperCase(char x)
         {
-            t += "*";   
-            Console.WriteLine(t);
-        }
-        Console.WriteLine('\n');
-    }
-
-    //3.10
-    public void guessGame()
-    {
-        int a, k = 0;
-        Random rnd = new Random();
-        int t = rnd.Next(0,10);
-        //ввод числа с проверкой на целое число и на вхождение в диапазон
-        while (true)
-        {
-            k++;
-            Console.WriteLine("Введите число от 0 до 9: ");
-            while (true)
+            //проверяем чтобы ASCII код символа был в диапазоне латинских букв верхнего регистра
+            if (64 < (int)x && (int)x < 91)
             {
-                if (int.TryParse(Console.ReadLine(), out a))
-                {
-                    if (a >= 0 && a <= 9)
-                    {
-                        break;
-                    }
-                    else
-                    {
-                        Console.WriteLine("Нужно число от 0 до 9!");
-                    }
-                }
-                else
-                {
-                    Console.WriteLine("Неверный ввод! Введите целое число!");
-                }
-            }
-            if (a == t)
-            {
-                Console.WriteLine("Вы угадали!");
-                Console.WriteLine(String.Format("Вы угадали за {0} попытки!\n", k));
-                break;
+                return true;
             }
             else
             {
-                Console.WriteLine("Вы не угадали!");
+                return false;
             }
         }
-    }
 
-    //4.2
-    public int findLast(int[] arr, int x)
-    {
-        int t = -1; //принимает значение последнего вхождения элемента, если он есть
-        for (int i = 0;i < arr.Length;i++)
+        //1.8
+        public bool isDivisor(int a, int b)
         {
-            if (arr[i] == x)
+            if (a % b == 0 || b % a == 0)
             {
-                t = i;
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
-        return t;
-    }
 
-    //4.4
-    public int[] add(int[] arr, int x, int pos)
-    {
-        int[] t = new int[arr.Length + 1];
-        int k = 0;
-        //вставляем в новый массив элементы из старого до нужной позиции
-        for (int i = 0; i < pos; i++)
+        //1.10
+        public int lastNumSum(int a, int b)
         {
-            t[k++] = arr[i];
+            return a % 10 + b % 10;
         }
-        Array.Copy(arr, t, pos);
-        //вставляем в новый массив данный элемент в нужную позиции
-        t[pos] = x;
-        k++;
-        //вставляем в новый массив элементы из старого после нужной позиции
-        for (int i = pos; i < arr.Length; i++)
-        {
-            t[k++] = arr[i];
-        }
-        return t;
-    }
 
-    //4.6
-    public void reverse(int[] arr)
-    {   
-        //создаем новый массив и записываем в него элементы старого, задом наперед
-        int[] t = new int[arr.Length];
-        int k = arr.Length - 1;
-        for (int i = 0; i < arr.Length; i++)
+        //2.2
+        public double safeDiv(int x, int y)
         {
-            t[k--] = arr[i];
-        }
-        Console.WriteLine('\n' + string.Join(" ", t)); 
-    }
-
-    //4.8
-    public int[] concat(int[] arr1, int[] arr2)
-    {
-        int k = 0;
-        int[] arr = new int[arr1.Length + arr2.Length];
-        //создаем новый массив, вставляем в него элементы первого массива, а затем второго
-        for (int i = 0; i < arr1.Length; i++)
-        {
-            arr[k++] = arr1[i];
-        }
-        for (int i = 0; i < arr2.Length; i++)
-        {
-            arr[k++] = arr2[i];
-        }
-        return arr;
-    }
-
-    //4.10
-    public int[] deleteNegative(int[] arr)
-    {
-        int k = 0;
-        for (int i = 0; i < arr.Length; i++)
-        {
-            if (arr[i] >= 0)
+            if (y != 0)
             {
-                k++;
+                return (double)x / y;
+            }
+            else
+            {
+                return 0;
             }
         }
-        //создаем новый массив, записываем в него только положмтельные элементы из данного массива
-        int[] t = new int[k];
-        int j = 0;
-        for (int i = 0; i < arr.Length; i++)
+
+        //2.4
+        public String makeDecision(int x, int y)
         {
-            if (arr[i] >= 0)
+            if (x > y)
             {
-                t[j] = arr[i];
-                j++;
+                return x.ToString() + " > " + y.ToString();
+            }
+            else if (x < y)
+            {
+                return x.ToString() + " < " + y.ToString();
+            }
+            else
+            {
+                return x.ToString() + " == " + y.ToString();
             }
         }
-        return t;
-    }
 
-    private static void Main(string[] args)
-    {
-        //указание нужных переменных op - опция, ex - для выхода
-        int op, ex = 0, a, b, c;
-        int[] arr = null, arr1 = null;
-        char x;
-        string y;
-        Program p = new();
-        //пока не выберем опцию выхода
-        while (ex == 0)
+        //2.6
+        public bool sum3(int x, int y, int z)
         {
-            Console.WriteLine("Выберите задание(1-20) или 0 для выхода из программы: ");
-            while (true)
+            if (x + y == z || x + z == y || y + z == x)
             {
-                if (int.TryParse(Console.ReadLine(), out op))
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        //2.8
+        public String age(int x)
+        {
+            if (x % 10 == 1 && x != 11)
+            {
+                return x.ToString() + " год";
+            }
+            else if ((x % 10 == 2 || x % 10 == 3 || x % 10 == 4) && x != 12 && x != 13 && x != 14)
+            {
+                return x.ToString() + " года";
+            }
+            else
+            {
+                return x.ToString() + " лет";
+            }
+        }
+
+        //2.10
+        public void printDays(String x)
+        {
+            x = x.ToLower();
+            switch (x)
+            {
+                case "понедельник":
+                    Console.WriteLine("Понедельник");
+                    Console.WriteLine("Вторник");
+                    Console.WriteLine("Среда");
+                    Console.WriteLine("Четверг");
+                    Console.WriteLine("Пятница");
+                    Console.WriteLine("Суббота");
+                    Console.WriteLine("Воскресенье\n");
+                    break;
+                case "вторник":
+                    Console.WriteLine("Вторник");
+                    Console.WriteLine("Среда");
+                    Console.WriteLine("Четверг");
+                    Console.WriteLine("Пятница");
+                    Console.WriteLine("Суббота");
+                    Console.WriteLine("Воскресенье\n");
+                    break;
+                case "среда":
+                    Console.WriteLine("Среда");
+                    Console.WriteLine("Четверг");
+                    Console.WriteLine("Пятница");
+                    Console.WriteLine("Суббота");
+                    Console.WriteLine("Воскресенье\n");
+                    break;
+                case "четверг":
+                    Console.WriteLine("Четверг");
+                    Console.WriteLine("Пятница");
+                    Console.WriteLine("Суббота");
+                    Console.WriteLine("Воскресенье\n");
+                    break;
+                case "пятница":
+                    Console.WriteLine("Пятница");
+                    Console.WriteLine("Суббота");
+                    Console.WriteLine("Воскресенье\n");
+                    break;
+                case "суббота":
+                    Console.WriteLine("Суббота");
+                    Console.WriteLine("Воскресенье\n");
+                    break;
+                case "воскресенье":
+                    Console.WriteLine("Воскресенье\n");
+                    break;
+                default:
+                    Console.WriteLine("Это не день недели\n");
+                    break;
+            }
+        }
+
+        //3.2
+        public String reverseListNums(int x)
+        {
+            string s = "";
+            if (x > 0)
+            {
+                while (x >= 0)
                 {
-                    if (op >= 0 && op < 21)
-                    {
-                        break;
-                    }
-                    else
-                    {
-                        Console.WriteLine("Нет такой опции!");
-                    }
+                    s = s + x--.ToString() + " ";
+                }
+            }
+            else
+            {
+                while (x <= 0)
+                {
+                    s = s + x++.ToString() + " ";
+                }
+            }
+            return s;
+        }
+
+        //3.4
+        public int pow(int x, int y)
+        {
+            int t = x;
+            for (int i = 0; i < y - 1; i++)
+            {
+                t *= x;
+            }
+            return t;
+        }
+
+        //3.6
+        public bool equalNum(int x)
+        {
+            int t = x % 10;
+            x /= 10;
+            //сравниваем цифры числа по очереди, если хоть один раз цифры разные, то false
+            while (x > 0)
+            {
+                if (t == x % 10)
+                {
+                    t = x % 10;
+                    x /= 10;
                 }
                 else
                 {
-                    Console.WriteLine("Неверный ввод! Введите целое число!");
+                    return false;
                 }
             }
-            switch (op)
-            {
-                case 0:
-                    ex = -1;
-                    break;
+            return true;
+        }
 
-                case 1:
-                    //1.2
-                    Console.WriteLine("\nЗадание 1.2: ");
-                    Console.Write("Введите число: ");
-                    while (true)
+        //3.8
+        public void leftTriangle(int x)
+        {
+            string t = "";
+            for (int i = 0; i < x; i++)
+            {
+                t += "*";
+                Console.WriteLine(t);
+            }
+            Console.WriteLine('\n');
+        }
+
+        //3.10
+        public void guessGame()
+        {
+            int a, k = 0;
+            Random rnd = new Random();
+            int t = rnd.Next(0, 10);
+            //ввод числа с проверкой на целое число и на вхождение в диапазон
+            while (true)
+            {
+                k++;
+                Console.WriteLine("Введите число от 0 до 9: ");
+                while (true)
+                {
+                    if (int.TryParse(Console.ReadLine(), out a))
                     {
-                        if (int.TryParse(Console.ReadLine(), out a))
+                        if (a >= 0 && a <= 9)
                         {
-                            if (a > 99)
+                            break;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Нужно число от 0 до 9!");
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Неверный ввод! Введите целое число!");
+                    }
+                }
+                if (a == t)
+                {
+                    Console.WriteLine("Вы угадали!");
+                    Console.WriteLine(String.Format("Вы угадали за {0} попытки!\n", k));
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Вы не угадали!");
+                }
+            }
+        }
+
+        //4.2
+        public int findLast(int[] arr, int x)
+        {
+            int t = -1; //принимает значение последнего вхождения элемента, если он есть
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] == x)
+                {
+                    t = i;
+                }
+            }
+            return t;
+        }
+
+        //4.4
+        public int[] add(int[] arr, int x, int pos)
+        {
+            int[] t = new int[arr.Length + 1];
+            int k = 0;
+            //вставляем в новый массив элементы из старого до нужной позиции
+            for (int i = 0; i < pos; i++)
+            {
+                t[k++] = arr[i];
+            }
+            Array.Copy(arr, t, pos);
+            //вставляем в новый массив данный элемент в нужную позиции
+            t[pos] = x;
+            k++;
+            //вставляем в новый массив элементы из старого после нужной позиции
+            for (int i = pos; i < arr.Length; i++)
+            {
+                t[k++] = arr[i];
+            }
+            return t;
+        }
+
+        //4.6
+        public void reverse(int[] arr)
+        {
+            //создаем новый массив и записываем в него элементы старого, задом наперед
+            int[] t = new int[arr.Length];
+            int k = arr.Length - 1;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                t[k--] = arr[i];
+            }
+            Console.WriteLine('\n' + string.Join(" ", t));
+        }
+
+        //4.8
+        public int[] concat(int[] arr1, int[] arr2)
+        {
+            int k = 0;
+            int[] arr = new int[arr1.Length + arr2.Length];
+            //создаем новый массив, вставляем в него элементы первого массива, а затем второго
+            for (int i = 0; i < arr1.Length; i++)
+            {
+                arr[k++] = arr1[i];
+            }
+            for (int i = 0; i < arr2.Length; i++)
+            {
+                arr[k++] = arr2[i];
+            }
+            return arr;
+        }
+
+        //4.10
+        public int[] deleteNegative(int[] arr)
+        {
+            int k = 0;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] >= 0)
+                {
+                    k++;
+                }
+            }
+            //создаем новый массив, записываем в него только положмтельные элементы из данного массива
+            int[] t = new int[k];
+            int j = 0;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] >= 0)
+                {
+                    t[j] = arr[i];
+                    j++;
+                }
+            }
+            return t;
+        }
+
+        private static void Main(string[] args)
+        {
+            //указание нужных переменных op - опция, ex - для выхода
+            int op, ex = 0, a, b, c;
+            int[] arr = null, arr1 = null;
+            char x;
+            string y;
+            Program p = new Program();
+            //пока не выберем опцию выхода
+            while (ex == 0)
+            {
+                Console.WriteLine("Выберите задание(1-20) или 0 для выхода из программы: ");
+                while (true)
+                {
+                    if (int.TryParse(Console.ReadLine(), out op))
+                    {
+                        if (op >= 0 && op < 21)
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Нет такой опции!");
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Неверный ввод! Введите целое число!");
+                    }
+                }
+                switch (op)
+                {
+                    case 0:
+                        ex = -1;
+                        break;
+
+                    case 1:
+                        //1.2
+                        Console.WriteLine("\nЗадание 1.2: ");
+                        Console.Write("Введите число: ");
+                        while (true)
+                        {
+                            if (int.TryParse(Console.ReadLine(), out a))
+                            {
+                                if (a > 99)
+                                {
+                                    break;
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Введите число в котором больше 2 знаков!");
+                                }
+                            }
+                            else
+                            {
+                                Console.WriteLine("Неверный ввод! Введите целое число!");
+                            }
+                        }
+                        Console.WriteLine("\nСумма последних двух знаков: " + p.sumLastNums(a) + "\n");
+                        break;
+
+                    case 2:
+                        //1.4
+                        Console.WriteLine("\nЗадание 1.4: ");
+                        Console.Write("Введите число: ");
+                        while (true)
+                        {
+                            if (int.TryParse(Console.ReadLine(), out a))
                             {
                                 break;
                             }
                             else
                             {
-                                Console.WriteLine("Введите число в котором больше 2 знаков!");
+                                Console.WriteLine("Неверный ввод! Введите целое число!");
                             }
                         }
-                        else
-                        {
-                            Console.WriteLine("Неверный ввод! Введите целое число!");
-                        }
-                    }
-                    Console.WriteLine("\nСумма последних двух знаков: " + p.sumLastNums(a) + "\n");
-                    break;
+                        Console.WriteLine("\nРезультат: " + p.isPositive(a) + "\n");
+                        break;
 
-                case 2:
-                    //1.4
-                    Console.WriteLine("\nЗадание 1.4: ");
-                    Console.Write("Введите число: ");
-                    while (true)
-                    {
-                        if (int.TryParse(Console.ReadLine(), out a))
+                    case 3:
+                        //1.6
+                        Console.WriteLine("\nЗадание 1.6: ");
+                        Console.Write("Введите символ: ");
+                        while (true)
                         {
-                            break;
+                            if (char.TryParse(Console.ReadLine(), out x))
+                            {
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Неверный ввод! Введите один символ!");
+                            }
                         }
-                        else
-                        {
-                            Console.WriteLine("Неверный ввод! Введите целое число!");
-                        }
-                    }
-                    Console.WriteLine("\nРезультат: " + p.isPositive(a) + "\n");
-                    break;
+                        Console.WriteLine("\nРезультат: " + p.isUpperCase(x) + "\n");
+                        break;
 
-                case 3:
-                    //1.6
-                    Console.WriteLine("\nЗадание 1.6: ");
-                    Console.Write("Введите символ: ");
-                    while (true)
-                    {
-                        if (char.TryParse(Console.ReadLine(), out x))
+                    case 4:
+                        //1.8
+                        Console.WriteLine("\nЗадание 1.8: ");
+                        Console.Write("Введите число a: ");
+                        while (true)
                         {
-                            break;
+                            if (int.TryParse(Console.ReadLine(), out a))
+                            {
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Неверный ввод! Введите целое число!");
+                            }
                         }
-                        else
-                        {
-                            Console.WriteLine("Неверный ввод! Введите один символ!");
-                        }
-                    }
-                    Console.WriteLine("\nРезультат: " + p.isUpperCase(x) + "\n");
-                    break;
-
-                case 4:
-                    //1.8
-                    Console.WriteLine("\nЗадание 1.8: ");
-                    Console.Write("Введите число a: ");
-                    while (true)
-                    {
-                        if (int.TryParse(Console.ReadLine(), out a))
-                        {
-                            break;
-                        }
-                        else
-                        {
-                            Console.WriteLine("Неверный ввод! Введите целое число!");
-                        }
-                    }
-                    Console.Write("Введите число b: ");
-                    while (true)
-                    {
-                        if (int.TryParse(Console.ReadLine(), out b))
-                        {
-                            break;
-                        }
-                        else
-                        {
-                            Console.WriteLine("Неверный ввод! Введите целое число!");
-                        }
-                    }
-                    Console.WriteLine("\nРезультат: " + p.isDivisor(a, b) + "\n");
-                    break;
-
-                case 5:
-                    //1.10
-                    Console.WriteLine("\nЗадание 1.10: ");
-                    Console.WriteLine("Введите 1-е число");
-                    while (true)
-                    {
-                        if (int.TryParse(Console.ReadLine(), out a))
-                        {
-                            break;
-                        }
-                        else
-                        {
-                            Console.WriteLine("Неверный ввод! Введите целое число!");
-                        }
-                    }
-                    for (int i = 0; i < 4; i++)
-                    {
-                        Console.WriteLine(String.Format("Введите {0}-е число", i + 2));
+                        Console.Write("Введите число b: ");
                         while (true)
                         {
                             if (int.TryParse(Console.ReadLine(), out b))
@@ -527,402 +498,435 @@ internal class Program
                                 Console.WriteLine("Неверный ввод! Введите целое число!");
                             }
                         }
-                        a = p.lastNumSum(a, b);
-                        Console.WriteLine("\nРезультат:" + a + '\n');
-                    }
-                    Console.WriteLine("Итог:" + a + "\n");
-                    break;
+                        Console.WriteLine("\nРезультат: " + p.isDivisor(a, b) + "\n");
+                        break;
 
-                case 6:
-                    //2.2
-                    Console.WriteLine("\nЗадание 2.2: ");
-                    Console.WriteLine("Введите первое число: ");
-                    while (true)
-                    {
-                        if (int.TryParse(Console.ReadLine(), out a))
+                    case 5:
+                        //1.10
+                        Console.WriteLine("\nЗадание 1.10: ");
+                        Console.WriteLine("Введите 1-е число");
+                        while (true)
                         {
-                            break;
-                        }
-                        else
-                        {
-                            Console.WriteLine("Неверный ввод! Введите целое число!");
-                        }
-                    }
-                    Console.WriteLine("Введите второе число: ");
-                    while (true)
-                    {
-                        if (int.TryParse(Console.ReadLine(), out b))
-                        {
-                            break;
-                        }
-                        else
-                        {
-                            Console.WriteLine("Неверный ввод! Введите целое число!");
-                        }
-                    }
-                    Console.WriteLine("\nРезультат: " + p.safeDiv(a, b) + "\n");
-                    break;
-
-                case 7:
-                    //2.4
-                    Console.WriteLine("\nЗадание 2.4: ");
-                    Console.WriteLine("Введите первое число: ");
-                    while (true)
-                    {
-                        if (int.TryParse(Console.ReadLine(), out a))
-                        {
-                            break;
-                        }
-                        else
-                        {
-                            Console.WriteLine("Неверный ввод! Введите целое число!");
-                        }
-                    }
-                    Console.WriteLine("Введите второе число: ");
-                    while (true)
-                    {
-                        if (int.TryParse(Console.ReadLine(), out b))
-                        {
-                            break;
-                        }
-                        else
-                        {
-                            Console.WriteLine("Неверный ввод! Введите целое число!");
-                        }
-                    }
-                    Console.WriteLine("\nРезультат: " + p.makeDecision(a, b) + "\n");
-                    break;
-
-                case 8:
-                    //2.6
-                    Console.WriteLine("\nЗадание 2.6: ");
-                    Console.WriteLine("Введите первое число: ");
-                    while (true)
-                    {
-                        if (int.TryParse(Console.ReadLine(), out a))
-                        {
-                            break;
-                        }
-                        else
-                        {
-                            Console.WriteLine("Неверный ввод! Введите целое число!");
-                        }
-                    }
-                    Console.WriteLine("Введите второе число: ");
-                    while (true)
-                    {
-                        if (int.TryParse(Console.ReadLine(), out b))
-                        {
-                            break;
-                        }
-                        else
-                        {
-                            Console.WriteLine("Неверный ввод! Введите целое число!");
-                        }
-                    }
-                    Console.WriteLine("Введите третье число: ");
-                    while (true)
-                    {
-                        if (int.TryParse(Console.ReadLine(), out c))
-                        {
-                            break;
-                        }
-                        else
-                        {
-                            Console.WriteLine("Неверный ввод! Введите целое число!");
-                        }
-                    }
-                    Console.WriteLine("\nРезультат: " + p.sum3(a, b, c) + "\n");
-                    break;
-
-                case 9:
-                    //2.8
-                    Console.WriteLine("\nЗадание 2.8: ");
-                    Console.WriteLine("Введите возраст: ");
-                    while (true)
-                    {
-                        if (int.TryParse(Console.ReadLine(), out a))
-                        {
-                            if (a > 0)
+                            if (int.TryParse(Console.ReadLine(), out a))
                             {
                                 break;
                             }
                             else
                             {
-                                Console.WriteLine("Возраст не может быть отрицательным!");
+                                Console.WriteLine("Неверный ввод! Введите целое число!");
                             }
                         }
-                        else
+                        for (int i = 0; i < 4; i++)
                         {
-                            Console.WriteLine("Неверный ввод! Введите целое число!");
+                            Console.WriteLine(String.Format("Введите {0}-е число", i + 2));
+                            while (true)
+                            {
+                                if (int.TryParse(Console.ReadLine(), out b))
+                                {
+                                    break;
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Неверный ввод! Введите целое число!");
+                                }
+                            }
+                            a = p.lastNumSum(a, b);
+                            Console.WriteLine("\nРезультат:" + a + '\n');
                         }
-                    }
-                    Console.WriteLine("\nРезультат: " + p.age(a) + "\n");
-                    break;
+                        Console.WriteLine("Итог:" + a + "\n");
+                        break;
 
-                case 10:
-                    //2.10
-                    Console.WriteLine("\nЗадание 2.10: ");
-                    Console.WriteLine("Введите день недели: ");
-                    y = Console.ReadLine();
-                    Console.WriteLine("\nРезультат: ");
-                    p.printDays(y);
-                    break;
-
-                case 11:
-                    //3.2
-                    Console.WriteLine("\nЗадание 3.2: ");
-                    Console.WriteLine("Введите число: ");
-                    while (true)
-                    {
-                        if (int.TryParse(Console.ReadLine(), out a))
+                    case 6:
+                        //2.2
+                        Console.WriteLine("\nЗадание 2.2: ");
+                        Console.WriteLine("Введите первое число: ");
+                        while (true)
                         {
-                            break;
-                        }
-                        else
-                        {
-                            Console.WriteLine("Неверный ввод! Введите целое число!");
-                        }
-                    }
-                    Console.WriteLine("\nРезультат: " + p.reverseListNums(a) + "\n");
-                    break;
-
-                case 12:
-                    //3.4
-                    Console.WriteLine("\nЗадание 3.4: ");
-                    Console.WriteLine("Введите первое число: ");
-                    while (true)
-                    {
-                        if (int.TryParse(Console.ReadLine(), out a))
-                        {
-                            break;
-                        }
-                        else
-                        {
-                            Console.WriteLine("Неверный ввод! Введите целое число!");
-                        }
-                    }
-                    Console.WriteLine("Введите второе число: ");
-                    while (true)
-                    {
-                        if (int.TryParse(Console.ReadLine(), out b))
-                        {
-                            break;
-                        }
-                        else
-                        {
-                            Console.WriteLine("Неверный ввод! Введите целое число!");
-                        }
-                    }
-                    Console.WriteLine("\nРезультат: " + p.pow(a, b) + "\n");
-                    break;
-
-                case 13:
-                    //3.6
-                    Console.WriteLine("\nЗадание 3.6: ");
-                    Console.WriteLine("Введите число: ");
-                    while (true)
-                    {
-                        if (int.TryParse(Console.ReadLine(), out a))
-                        {
-                            break;
-                        }
-                        else
-                        {
-                            Console.WriteLine("Неверный ввод! Введите целое число!");
-                        }
-                    }
-                    Console.WriteLine("\nРезультат: " + p.equalNum(a) + "\n");
-                    break;
-
-                case 14:
-                    //3.8
-                    Console.WriteLine("\nЗадание 3.8: ");
-                    Console.WriteLine("Введите высоту треугольника: ");
-                    while (true)
-                    {
-                        if (int.TryParse(Console.ReadLine(), out a))
-                        {
-                            if (a > 0)
+                            if (int.TryParse(Console.ReadLine(), out a))
                             {
                                 break;
                             }
                             else
                             {
-                                Console.WriteLine("Высота не может быть отрицательной!");
+                                Console.WriteLine("Неверный ввод! Введите целое число!");
                             }
                         }
-                        else
+                        Console.WriteLine("Введите второе число: ");
+                        while (true)
                         {
-                            Console.WriteLine("Неверный ввод! Введите целое число!");
-                        }
-                    }
-                    Console.WriteLine("\nРезультат: ");
-                    p.leftTriangle(a);
-                    break;
-
-                case 15:
-                    //3.10
-                    Console.WriteLine("\nЗадание 3.10: ");
-                    p.guessGame();
-                    break;
-
-                case 16:
-                    //4.2
-                    Console.WriteLine("\nЗадание 4.2: ");
-                    Console.WriteLine("Введите числа массива через пробел:");
-                    while (true)
-                    {
-                        var line = Console.ReadLine();
-                        try
-                        {
-                            arr = line.Split(' ').Select(x => Convert.ToInt32(x)).ToArray();
-                            break;
-                        }
-                        catch (FormatException)
-                        {
-                            Console.WriteLine("Неверный ввод! Введите целые числа разделенные одним пробелом!");
-                        }
-                    }
-                    Console.WriteLine("Введите число:");
-                    while (true)
-                    {
-                        if (int.TryParse(Console.ReadLine(), out a))
-                        {
-                            break;
-                        }
-                        else
-                        {
-                            Console.WriteLine("Неверный ввод! Введите целое число!");
-                        }
-                    }
-                    Console.WriteLine("\nРезультат: " + p.findLast(arr, a) + "\n");
-                    break;
-
-                case 17:
-                    //4.4
-                    Console.WriteLine("\nЗадание 4.4: ");
-                    Console.WriteLine("Введите числа массива через пробел:");
-                    while (true)
-                    {
-                        var line = Console.ReadLine();
-                        try
-                        {
-                            arr = line.Split(' ').Select(x => Convert.ToInt32(x)).ToArray();
-                            break;
-                        }
-                        catch (FormatException)
-                        {
-                            Console.WriteLine("Неверный ввод! Введите целые числа разделенные одним пробелом!");
-                        }
-                    }
-                    Console.WriteLine("Введите число:");
-                    while (true)
-                    {
-                        if (int.TryParse(Console.ReadLine(), out a))
-                        {
-                            break;
-                        }
-                        else
-                        {
-                            Console.WriteLine("Неверный ввод! Введите целое число!");
-                        }
-                    }
-                    Console.WriteLine("Введите позицию:");
-                    while (true)
-                    {
-                        if (int.TryParse(Console.ReadLine(), out b))
-                        {
-                            if (b >= 0 && b <= arr.Length)
+                            if (int.TryParse(Console.ReadLine(), out b))
                             {
                                 break;
                             }
                             else
                             {
-                                Console.WriteLine("Нет такой позиций!");
+                                Console.WriteLine("Неверный ввод! Введите целое число!");
                             }
                         }
-                        else
-                        {
-                            Console.WriteLine("Неверный ввод! Введите целое число!");
-                        }
-                    }
-                    Console.WriteLine("\nРезультат: " + string.Join(" ", p.add(arr, a, b)) + "\n");
-                    break;
+                        Console.WriteLine("\nРезультат: " + p.safeDiv(a, b) + "\n");
+                        break;
 
-                case 18:
-                    //4.6
-                    Console.WriteLine("\nЗадание 4.6: ");
-                    Console.WriteLine("Введите числа массива через пробел:");
-                    while (true)
-                    {
-                        var line = Console.ReadLine();
-                        try
+                    case 7:
+                        //2.4
+                        Console.WriteLine("\nЗадание 2.4: ");
+                        Console.WriteLine("Введите первое число: ");
+                        while (true)
                         {
-                            arr = line.Split(' ').Select(x => Convert.ToInt32(x)).ToArray();
-                            break;
+                            if (int.TryParse(Console.ReadLine(), out a))
+                            {
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Неверный ввод! Введите целое число!");
+                            }
                         }
-                        catch (FormatException)
+                        Console.WriteLine("Введите второе число: ");
+                        while (true)
                         {
-                            Console.WriteLine("Неверный ввод! Введите целые числа разделенные одним пробелом!");
+                            if (int.TryParse(Console.ReadLine(), out b))
+                            {
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Неверный ввод! Введите целое число!");
+                            }
                         }
-                    }
-                    p.reverse(arr);
-                    break;
+                        Console.WriteLine("\nРезультат: " + p.makeDecision(a, b) + "\n");
+                        break;
 
-                case 19:
-                    //4.8
-                    Console.WriteLine("\nЗадание 4.8: ");
-                    Console.WriteLine("Введите числа первого массива через пробел:");
-                    while (true)
-                    {
-                        var line = Console.ReadLine();
-                        try
+                    case 8:
+                        //2.6
+                        Console.WriteLine("\nЗадание 2.6: ");
+                        Console.WriteLine("Введите первое число: ");
+                        while (true)
                         {
-                            arr = line.Split(' ').Select(x => Convert.ToInt32(x)).ToArray();
-                            break;
+                            if (int.TryParse(Console.ReadLine(), out a))
+                            {
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Неверный ввод! Введите целое число!");
+                            }
                         }
-                        catch (FormatException)
+                        Console.WriteLine("Введите второе число: ");
+                        while (true)
                         {
-                            Console.WriteLine("Неверный ввод! Введите целые числа разделенные одним пробелом!");
+                            if (int.TryParse(Console.ReadLine(), out b))
+                            {
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Неверный ввод! Введите целое число!");
+                            }
                         }
-                    }
-                    Console.WriteLine("Введите числа второго массива через пробел:");
-                    while (true)
-                    {
-                        var line = Console.ReadLine();
-                        try
+                        Console.WriteLine("Введите третье число: ");
+                        while (true)
                         {
-                            arr1 = line.Split(' ').Select(x => Convert.ToInt32(x)).ToArray();
-                            break;
+                            if (int.TryParse(Console.ReadLine(), out c))
+                            {
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Неверный ввод! Введите целое число!");
+                            }
                         }
-                        catch (FormatException)
-                        {
-                            Console.WriteLine("Неверный ввод! Введите целые числа разделенные одним пробелом!");
-                        }
-                    }
-                    Console.WriteLine("\nРезультат: " + string.Join(" ", p.concat(arr, arr1)) + "\n");
-                    break;
+                        Console.WriteLine("\nРезультат: " + p.sum3(a, b, c) + "\n");
+                        break;
 
-                case 20:
-                    //4.10
-                    Console.WriteLine("\nЗадание 4.10: ");
-                    Console.WriteLine("Введите числа массива через пробел:");
-                    while (true)
-                    {
-                        var line = Console.ReadLine();
-                        try
+                    case 9:
+                        //2.8
+                        Console.WriteLine("\nЗадание 2.8: ");
+                        Console.WriteLine("Введите возраст: ");
+                        while (true)
                         {
-                            arr = line.Split(' ').Select(x => Convert.ToInt32(x)).ToArray();
-                            break;
+                            if (int.TryParse(Console.ReadLine(), out a))
+                            {
+                                if (a > 0)
+                                {
+                                    break;
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Возраст не может быть отрицательным!");
+                                }
+                            }
+                            else
+                            {
+                                Console.WriteLine("Неверный ввод! Введите целое число!");
+                            }
                         }
-                        catch (FormatException)
+                        Console.WriteLine("\nРезультат: " + p.age(a) + "\n");
+                        break;
+
+                    case 10:
+                        //2.10
+                        Console.WriteLine("\nЗадание 2.10: ");
+                        Console.WriteLine("Введите день недели: ");
+                        y = Console.ReadLine();
+                        Console.WriteLine("\nРезультат: ");
+                        p.printDays(y);
+                        break;
+
+                    case 11:
+                        //3.2
+                        Console.WriteLine("\nЗадание 3.2: ");
+                        Console.WriteLine("Введите число: ");
+                        while (true)
                         {
-                            Console.WriteLine("Неверный ввод! Введите целые числа разделенные одним пробелом!");
+                            if (int.TryParse(Console.ReadLine(), out a))
+                            {
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Неверный ввод! Введите целое число!");
+                            }
                         }
-                    }
-                    Console.WriteLine("\nРезультат: " + string.Join(" ", p.deleteNegative(arr)) + "\n");
-                    break;
+                        Console.WriteLine("\nРезультат: " + p.reverseListNums(a) + "\n");
+                        break;
+
+                    case 12:
+                        //3.4
+                        Console.WriteLine("\nЗадание 3.4: ");
+                        Console.WriteLine("Введите первое число: ");
+                        while (true)
+                        {
+                            if (int.TryParse(Console.ReadLine(), out a))
+                            {
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Неверный ввод! Введите целое число!");
+                            }
+                        }
+                        Console.WriteLine("Введите второе число: ");
+                        while (true)
+                        {
+                            if (int.TryParse(Console.ReadLine(), out b))
+                            {
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Неверный ввод! Введите целое число!");
+                            }
+                        }
+                        Console.WriteLine("\nРезультат: " + p.pow(a, b) + "\n");
+                        break;
+
+                    case 13:
+                        //3.6
+                        Console.WriteLine("\nЗадание 3.6: ");
+                        Console.WriteLine("Введите число: ");
+                        while (true)
+                        {
+                            if (int.TryParse(Console.ReadLine(), out a))
+                            {
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Неверный ввод! Введите целое число!");
+                            }
+                        }
+                        Console.WriteLine("\nРезультат: " + p.equalNum(a) + "\n");
+                        break;
+
+                    case 14:
+                        //3.8
+                        Console.WriteLine("\nЗадание 3.8: ");
+                        Console.WriteLine("Введите высоту треугольника: ");
+                        while (true)
+                        {
+                            if (int.TryParse(Console.ReadLine(), out a))
+                            {
+                                if (a > 0)
+                                {
+                                    break;
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Высота не может быть отрицательной!");
+                                }
+                            }
+                            else
+                            {
+                                Console.WriteLine("Неверный ввод! Введите целое число!");
+                            }
+                        }
+                        Console.WriteLine("\nРезультат: ");
+                        p.leftTriangle(a);
+                        break;
+
+                    case 15:
+                        //3.10
+                        Console.WriteLine("\nЗадание 3.10: ");
+                        p.guessGame();
+                        break;
+
+                    case 16:
+                        //4.2
+                        Console.WriteLine("\nЗадание 4.2: ");
+                        Console.WriteLine("Введите числа массива через пробел:");
+                        while (true)
+                        {
+                            var line = Console.ReadLine();
+                            try
+                            {
+                                arr = line.Split(' ').Select(z => Convert.ToInt32(z)).ToArray();
+                                break;
+                            }
+                            catch (FormatException)
+                            {
+                                Console.WriteLine("Неверный ввод! Введите целые числа разделенные одним пробелом!");
+                            }
+                        }
+                        Console.WriteLine("Введите число:");
+                        while (true)
+                        {
+                            if (int.TryParse(Console.ReadLine(), out a))
+                            {
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Неверный ввод! Введите целое число!");
+                            }
+                        }
+                        Console.WriteLine("\nРезультат: " + p.findLast(arr, a) + "\n");
+                        break;
+
+                    case 17:
+                        //4.4
+                        Console.WriteLine("\nЗадание 4.4: ");
+                        Console.WriteLine("Введите числа массива через пробел:");
+                        while (true)
+                        {
+                            var line = Console.ReadLine();
+                            try
+                            {
+                                arr = line.Split(' ').Select(z => Convert.ToInt32(z)).ToArray();
+                                break;
+                            }
+                            catch (FormatException)
+                            {
+                                Console.WriteLine("Неверный ввод! Введите целые числа разделенные одним пробелом!");
+                            }
+                        }
+                        Console.WriteLine("Введите число:");
+                        while (true)
+                        {
+                            if (int.TryParse(Console.ReadLine(), out a))
+                            {
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Неверный ввод! Введите целое число!");
+                            }
+                        }
+                        Console.WriteLine("Введите позицию:");
+                        while (true)
+                        {
+                            if (int.TryParse(Console.ReadLine(), out b))
+                            {
+                                if (b >= 0 && b <= arr.Length)
+                                {
+                                    break;
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Нет такой позиций!");
+                                }
+                            }
+                            else
+                            {
+                                Console.WriteLine("Неверный ввод! Введите целое число!");
+                            }
+                        }
+                        Console.WriteLine("\nРезультат: " + string.Join(" ", p.add(arr, a, b)) + "\n");
+                        break;
+
+                    case 18:
+                        //4.6
+                        Console.WriteLine("\nЗадание 4.6: ");
+                        Console.WriteLine("Введите числа массива через пробел:");
+                        while (true)
+                        {
+                            var line = Console.ReadLine();
+                            try
+                            {
+                                arr = line.Split(' ').Select(z => Convert.ToInt32(z)).ToArray();
+                                break;
+                            }
+                            catch (FormatException)
+                            {
+                                Console.WriteLine("Неверный ввод! Введите целые числа разделенные одним пробелом!");
+                            }
+                        }
+                        p.reverse(arr);
+                        break;
+
+                    case 19:
+                        //4.8
+                        Console.WriteLine("\nЗадание 4.8: ");
+                        Console.WriteLine("Введите числа первого массива через пробел:");
+                        while (true)
+                        {
+                            var line = Console.ReadLine();
+                            try
+                            {
+                                arr = line.Split(' ').Select(z => Convert.ToInt32(z)).ToArray();
+                                break;
+                            }
+                            catch (FormatException)
+                            {
+                                Console.WriteLine("Неверный ввод! Введите целые числа разделенные одним пробелом!");
+                            }
+                        }
+                        Console.WriteLine("Введите числа второго массива через пробел:");
+                        while (true)
+                        {
+                            var line = Console.ReadLine();
+                            try
+                            {
+                                arr1 = line.Split(' ').Select(z => Convert.ToInt32(z)).ToArray();
+                                break;
+                            }
+                            catch (FormatException)
+                            {
+                                Console.WriteLine("Неверный ввод! Введите целые числа разделенные одним пробелом!");
+                            }
+                        }
+                        Console.WriteLine("\nРезультат: " + string.Join(" ", p.concat(arr, arr1)) + "\n");
+                        break;
+
+                    case 20:
+                        //4.10
+                        Console.WriteLine("\nЗадание 4.10: ");
+                        Console.WriteLine("Введите числа массива через пробел:");
+                        while (true)
+                        {
+                            var line = Console.ReadLine();
+                            try
+                            {
+                                arr = line.Split(' ').Select(z => Convert.ToInt32(z)).ToArray();
+                                break;
+                            }
+                            catch (FormatException)
+                            {
+                                Console.WriteLine("Неверный ввод! Введите целые числа разделенные одним пробелом!");
+                            }
+                        }
+                        Console.WriteLine("\nРезультат: " + string.Join(" ", p.deleteNegative(arr)) + "\n");
+                        break;
+                }
             }
         }
     }
