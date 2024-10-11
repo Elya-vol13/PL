@@ -418,6 +418,7 @@ namespace ConsoleApp3c_
                         {
                             if (int.TryParse(Console.ReadLine(), out a))
                             {
+                                a = Math.Abs(a);
                                 if (a > 99)
                                 {
                                     break;
@@ -928,6 +929,7 @@ namespace ConsoleApp3c_
                         break;
                 }
             }
+            Console.ReadKey();
         }
     }
 }
