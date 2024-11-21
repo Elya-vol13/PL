@@ -169,7 +169,7 @@ public class Program
         Console.WriteLine($"Список L2: \n{string.Join(", ", L2)}");
         N1(L, L1, L2);
         Console.WriteLine($"Список после преобразований: \n{string.Join(", ", L)}");
-        
+
         //Задание 2
         Console.WriteLine("\nЗадание 2: ");
         LinkedList<int> linkedList = new LinkedList<int>(new[] {5, 3, 8, 1, 4});
@@ -187,11 +187,25 @@ public class Program
             { "Студент3", new HashSet<string> {"Игра1", "Игра6", "Игра2"}}
         };
 
+        // Вывод игр
+        Console.WriteLine("Перечень всех игр:");
+        foreach (var game in games)
+        {
+            Console.Write(game + " ");
+        }
+
+        // Вывод игр студентов
+        Console.WriteLine("\n\nИгры студентов:");
+        foreach (var student in studentGames)
+        {
+            Console.WriteLine($"{student.Key}: {string.Join(", ", student.Value)}");
+        }
+
         var allGames = N3_1(games, studentGames);
         var someGames = N3_2(studentGames);
         var noGames = N3_3(games, someGames);
 
-        Console.WriteLine("Игры, в которые играют все студенты: " + string.Join(", ", allGames)); 
+        Console.WriteLine("\nИгры, в которые играют все студенты: " + string.Join(", ", allGames)); 
         Console.WriteLine("Игры, в которые играют некоторые студенты: " + string.Join(", ", someGames)); 
         Console.WriteLine("Игры, в которые не играет ни один студент: " + string.Join(", ", noGames));
 
