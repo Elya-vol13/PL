@@ -108,7 +108,7 @@ public class Program
     public static HashSet<string> N3_3(HashSet<string> games, HashSet<string> someGames)
     {
         var notGames = new HashSet<string>(games);
-        //удаляем из перечечня всех игр игры из перечня игр, в которые играют некоторые студенты
+        //удаляем из перечня всех игр игры из перечня игр, в которые играют некоторые студенты
         foreach (var game in someGames)
         {
             notGames.Remove(game);
