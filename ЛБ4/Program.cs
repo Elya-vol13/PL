@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -163,11 +163,13 @@ public class Program
         Console.WriteLine("Задание 1: ");
         List<string> L = new List<string> {"a", "b", "c", "d", "b", "c"};
         List<string> L1 = new List<string> {"b", "c"};
-        List<string> L2 = new List<string> {"e", "f"};
-        Console.WriteLine($"Список: \n{string.Join(", ", L)}");
+        List<string> L2 = new List<string> {"e", "f" };
+        Console.WriteLine($"Список L: \n{string.Join(", ", L)}");
+        Console.WriteLine($"Список L1: \n{string.Join(", ", L1)}");
+        Console.WriteLine($"Список L2: \n{string.Join(", ", L2)}");
         N1(L, L1, L2);
         Console.WriteLine($"Список после преобразований: \n{string.Join(", ", L)}");
-
+        
         //Задание 2
         Console.WriteLine("\nЗадание 2: ");
         LinkedList<int> linkedList = new LinkedList<int>(new[] {5, 3, 8, 1, 4});
