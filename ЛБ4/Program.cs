@@ -79,7 +79,7 @@ public class Program
             allGames.Clear();
             foreach (var game in t)
             {
-                //если в перечне игр студента, есть какая либо игра из t, добаляем эту игру в allGames
+                //если в перечне игр студента, есть какая либо игра из t, добавляем эту игру в allGames
                 if (g.Contains(game))
                 {
                     allGames.Add(game);
