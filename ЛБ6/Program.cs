@@ -110,7 +110,7 @@ namespace ConsoleApp1_csharp
                         Console.WriteLine("\n3:");
                         Fraction f4 = (Fraction)f3.Clone();
                         Console.WriteLine($"f3 = {f3}");
-                        Console.WriteLine($"f4(копия f4) = {f4}");
+                        Console.WriteLine($"f4(копия f3) = {f4}");
                         Console.WriteLine($"{f4} == {f3}: {f4 == f3}");
 
                         //4
