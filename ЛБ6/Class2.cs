@@ -1,10 +1,18 @@
-﻿using System;
+using System;
 
 namespace ConsoleApp1_csharp
 {
-    
+    // Интерфейс для дроби
+    public interface IFraction
+    {
+        // Метод для получения вещественного значения дроби
+        double GetValue();
 
-    public class Fraction : ICloneable
+        // Метод для установки числителя и знаменателя
+        void SetFraction(int numerator, int denominator);
+    }
+
+    public class Fraction : ICloneable, IFraction
     {
         private int num; //Числитель
         private int den; //Знаменатель
@@ -112,7 +120,8 @@ namespace ConsoleApp1_csharp
         //Перегрузка операторов сравнения
         public static bool operator ==(Fraction a, Fraction b)
         {
-            if(a.num == b.num){
+            if (a.num == b.num)
+            {
                 if (a.den == b.den)
                 {
                     return true;
